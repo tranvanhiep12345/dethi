@@ -24,19 +24,21 @@ while(start){
             Menu.separates()
             break
         case 3:
-            for(let i=0; i < +readLine.question('Nhap so luong nguoi yeu muon tao: '); i++){
+            let count = +readLine.question('Nhap so luong nguoi yeu muon tao: ')
+            for(let i=0; i < count; i++){
                 let girlFriend = new GirlFriend(readLine.question('Nhap id nguoi yeu moi: '),
-                                                readLine.question('Nhap ten nguoi yeu moi: '),
-                                                readLine.question('Nhap cung hoang dao cua nguoi yeu moi: '),
-                                                readLine.question('Nhap que quan cua nguoi yeu moi: '),
-                                                readLine.question('Nhap nam sinh cua nguoi yeu moi: '),
-                                                readLine.question('Nhap so thich cua nguoi yeu moi: '))
+                                                 readLine.question('Nhap ten nguoi yeu moi: '),
+                                                 readLine.question('Nhap cung hoang dao cua nguoi yeu moi: '),
+                                                 readLine.question('Nhap que quan cua nguoi yeu moi: '),
+                                                +readLine.question('Nhap nam sinh cua nguoi yeu moi: '),
+                                                 readLine.question('Nhap so thich cua nguoi yeu moi: ')
+                )
                 listGirlFriend.addNewGirlFriend(girlFriend)
             }
             Menu.separates()
             break
         case 4:
-            listGirlFriend.editProfileGirlFriend(+readLine.question('Nhap id nguoi yeu muon chinh sua: '),
+            listGirlFriend.editProfileGirlFriend(readLine.question('Nhap id nguoi yeu muon chinh sua: '),
                                                   readLine.question('Nhap ten nguoiyeu moi: '),
                                                   readLine.question('Nhap cung hoang dao cua nguoi yeu moi:'),
                                                   readLine.question('Nhap que quan cua nguoi yeu moi: '),

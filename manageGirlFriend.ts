@@ -29,13 +29,19 @@ export class ManageGirlFriend{
         })
     }
     addNewGirlFriend(value: GirlFriend){
+        let item = false
         this.getListGirlFriend().map(index => {
-            if(index.getIdGirlFriend() !== value.getIdGirlFriend()){
-                this.getListGirlFriend().push(value)
-            }else{
-                console.log('Id người yêu này đã tồn tại')
+            if(index.getIdGirlFriend() === value.getIdGirlFriend()) {
+                item = true
             }
         })
+        if(!item){
+            console.log('Them thanh cong')
+            this.getListGirlFriend().push(value)
+
+        } else{
+            console.log('Id đã có')
+        }
     }
     editProfileGirlFriend(value: number, name: string, zodiac: string, address: string, year: number, hobbies: string ){
         this.getListGirlFriend().map(index =>{
